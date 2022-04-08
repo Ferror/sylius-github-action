@@ -1,0 +1,11 @@
+on: [push]
+
+jobs:
+  sylius_job:
+    runs-on: ubuntu-latest
+    name: A job to say hello
+    steps:
+      - name: Hello world action step
+        uses: ferror/sylius-github-action
+        run: |
+            composer create-project sylius/sylius-standard app
