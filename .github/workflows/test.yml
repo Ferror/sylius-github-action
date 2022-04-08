@@ -5,7 +5,10 @@ jobs:
     runs-on: ubuntu-latest
     name: A job to say hello
     steps:
-      - name: Hello world action step
-        uses: ferror/sylius-github-action
+      -
+          name: Hello world action step
+          uses: ferror/sylius-github-action@latest
+      -
+        name: create sylius project
         run: |
             composer create-project sylius/sylius-standard app
