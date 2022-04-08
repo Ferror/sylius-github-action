@@ -1,0 +1,6 @@
+# action.yml
+name: 'Sylius Github Action'
+description: 'Run Tests on sylius image'
+runs:
+  using: 'docker'
+  image: 'sylius/standard:1.11-traditional'
