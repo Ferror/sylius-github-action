@@ -7,7 +7,7 @@ jobs:
     steps:
       -
           name: Hello world action step
-          uses: ferror/sylius-github-action@v1
+          uses: ferror/sylius-github-action@v2
       -
         name: create sylius project
         run: |
