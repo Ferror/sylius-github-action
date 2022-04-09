@@ -15,3 +15,8 @@ RUN yarn install --ignore-scripts && yarn add node-sass && yarn build
 
 RUN mkdir -p /app/public/media/image
 RUN chmod -R 777 /app/var
+
+COPY ./entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]

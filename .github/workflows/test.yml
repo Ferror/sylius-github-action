@@ -7,4 +7,4 @@ jobs:
     steps:
       -
           name: Hello world action step
-          uses: ferror/sylius-github-action@v5
+          uses: ferror/sylius-github-action@v6
