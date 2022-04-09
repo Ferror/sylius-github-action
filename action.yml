@@ -4,3 +4,4 @@ description: 'Run Tests on sylius image'
 runs:
     using: 'docker'
     image: 'Dockerfile'
+    entrypoint: ""

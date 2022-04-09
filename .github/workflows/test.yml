@@ -8,7 +8,3 @@ jobs:
       -
           name: Hello world action step
           uses: ferror/sylius-github-action@v4
-      -
-        name: create sylius project
-        run: |
-            composer create-project sylius/sylius-standard app
