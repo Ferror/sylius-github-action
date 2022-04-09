@@ -16,8 +16,6 @@ RUN yarn install --ignore-scripts && yarn add node-sass && yarn build
 RUN mkdir -p public/media/image
 RUN chmod -R 777 var
 
-RUN /usr/bin/supervisord -c /etc/supervisor/supervisord.conf &
-
 COPY ./entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
