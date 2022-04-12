@@ -1,8 +1,12 @@
 FROM sylius/standard:1.11-traditional
 
+ENV APP_ENV=prod
+ENV APP_DEBUG=0
+ENV DATABASE_URL="mysql://root@127.0.0.1/sylius_%kernel.environment%"
+
 WORKDIR /
 
-RUN composer create-project sylius/sylius-standard app
+RUN composer create-project sylius/sylius-standard app --no-scripts
 
 WORKDIR /app/
 
@@ -15,8 +19,6 @@ RUN yarn install --ignore-scripts && yarn add node-sass && yarn build
 
 RUN mkdir -p public/media/image
 RUN chmod -R 777 var
-
-RUN /usr/bin/supervisord -c /etc/supervisor/supervisord.conf &
 
 COPY ./entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh

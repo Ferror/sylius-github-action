@@ -1,4 +1,12 @@
-#!/bin/sh
+#!/bin/bash
+
+set -m
+
+/usr/bin/supervisord &
+
+sleep 5
+
+service supervisor status
 
 curl localhost:80
 
