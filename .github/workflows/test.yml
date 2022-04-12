@@ -1,10 +1,19 @@
 on: [push]
 
 jobs:
-  sylius_job:
-    runs-on: ubuntu-latest
-    name: A job to say hello
-    steps:
-      -
-          name: Hello world action step
-          uses: ferror/sylius-github-action@v7
+    sylius_job:
+        runs-on: ubuntu-latest
+        name: A job to say hello
+        steps:
+            -
+                name: Shutdown Ubuntu MySQL (SUDO)
+                run: sudo service mysql stop
+            -
+                name: Run MySQL
+                uses: mirromutth/mysql-action@v1.1
+                with:
+                    mysql version: '8.0'
+                    mysql database: 'sylius'
+            -
+                name: Run Sylius Docker
+                uses: ferror/sylius-github-action@v7

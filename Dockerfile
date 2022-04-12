@@ -2,7 +2,7 @@ FROM sylius/standard:1.11-traditional
 
 ENV APP_ENV=prod
 ENV APP_DEBUG=0
-ENV DATABASE_URL="mysql://root@127.0.0.1/sylius_%kernel.environment%"
+ENV DATABASE_URL="mysql://root@127.0.0.1/sylius"
 
 WORKDIR /
 

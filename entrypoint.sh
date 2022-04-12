@@ -8,6 +8,8 @@ sleep 5
 
 service supervisor status
 
+php bin/console doctrine:schema:update -f
+
 curl localhost:80
 
 # IF APP_ENV test
